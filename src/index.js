@@ -1,6 +1,6 @@
-import { lightScroll } from 'lightScroll';
+import { lightScroll } from './lightScroll';
 import Notiflix from 'notiflix';
-import ApiPhotoService from 'fetchPhotos.js';
+import ApiPhotoService from './fetchPhotos';
 // Описаний в документації
 import SimpleLightbox from 'simplelightbox';
 // Додатковий імпорт стилів
@@ -26,7 +26,6 @@ let totalPage = ' ';
 
 
 function observeObj(entries) {
-  //   console.log(entries);
 
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -54,10 +53,9 @@ function observeObj(entries) {
 const observer = new IntersectionObserver(observeObj, params);
 
 linkElemById.searchForm.addEventListener('submit', onSubmitSearchForm);
-// linkElemById.galleryAll.addEventListener('click', selectGalleryElem);
 document.addEventListener('scroll', lightScroll);
 
-// форма поиска
+
 function onSubmitSearchForm(evt) {
   evt.preventDefault();
   apiPhotoService.query = evt.currentTarget.elements.searchQuery.value;
@@ -71,7 +69,6 @@ function onSubmitSearchForm(evt) {
   
   apiPhotoService.resetPage();
   apiPhotoService.fetchPhoto().then(data => {
-    // console.log(data);
     const { hits, totalHits } = data;
     if (hits.length === 0) {
       clearAll();
@@ -81,7 +78,7 @@ function onSubmitSearchForm(evt) {
 
     renderMarkupPhotos(data);
     observer.observe(linkElemById.guard);
-    Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`); //повідомлення, в якому написано, скільки всього знайшли зображень (властивість totalHits)
+    Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
   });
 }
 
@@ -106,7 +103,7 @@ function renderMarkupPhotos(data) {
           </div></a>`
 }).join('');
   linkElemById.galleryAll.insertAdjacentHTML('beforeend', markup);
-  //після додавання нової групи карток зображень.
+
   lightbox.refresh();
 }
 

@@ -4,12 +4,12 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 export default class ApiPhotoService {
   constructor() {
     this.URL = 'https://pixabay.com/api/';
-    this.KEY = '35758762-7b56d36fcc9a29f605f00bc33';
+    this.KEY = '36176175-fbd42a4b0d35d9dd333ed77ba';
     this.PAGE = 1;
     this.PER_PAGE = 20;
     this.searchQuery = '';
   }
-  //публічний API сервісу Pixabay синтаксис async
+  
   async fetchPhoto() {
  
     const searchParams = new URLSearchParams({
@@ -28,7 +28,7 @@ export default class ApiPhotoService {
       if (response.status !== 200) {
         throw new Error(response.status);
       }
-    //   this.PAGE += 1;
+
       return response.data;
     } 
     catch (error) {

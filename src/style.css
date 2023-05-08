@@ -1,5 +1,5 @@
 :root {
-    --main-text-color:#0d37a9;
+    --main-text-color:#010511;
     --all: transition-duration: 0.2s; transition-timing-function: ease-in-out; transition-delay: 0s; transition-property: all;
  }
  
@@ -39,7 +39,7 @@
    left: 0;
    display: flex;
    justify-content: center;
-   background-color: #7283b2;
+   background-color: #1d3370;
    font: inherit;
    font-weight: 600;
    padding: 8px;
@@ -60,7 +60,6 @@
      outline: none;
      flex-grow: 1;
      padding: 0.3125rem 0.9375rem;
-     /* font-size: .875rem; */
      font-weight: 600;
      transition: all .2s ease-in-out;
      box-shadow: inset 5px 5px px #babecc, inset -3px -3px 7px #fff;
@@ -72,7 +71,6 @@
  .search-form button {
      max-width: 9.375rem;
      height: 2.5rem;
-     /* width: 20rem; */
      cursor: pointer;
      color: #0d37a9;
      text-shadow: 1px 1px 1px #fff;
@@ -100,8 +98,7 @@
  }
  
  .icon-arrow{
-   fill:#0d37a9;
-   margin-right: 10px;
+   fill:#010510;
    }
  .gallery {
    display: flex;
@@ -145,7 +142,6 @@
    display: flex;
    background-color: #c6d0ec;
    padding: 0px;
-     /* border-color: #fff; */
  
  }
  .info-item {
@@ -156,5 +152,4 @@
    margin: 10px;
    text-align: center;
    color: var(--main-text-color);
- 
  }
